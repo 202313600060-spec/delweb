@@ -1,0 +1,464 @@
+body {
+    background-color: rgb(48, 48, 48);
+    color: white;
+    overflow-x: hidden;
+}
+
+/* ---- Cabeçalho da página -----*/
+.header { 
+    background-color: rgb(61, 61, 61);
+    width: 101.1%;   
+    height: 100px;
+    margin: -8px;
+    border-bottom: 3px solid rgb(27, 27, 27); 
+    overflow:hidden;
+    /*position: relative;
+    bottom: 8px;
+    right: 8px;*/
+}
+/*logo*/
+.header img {
+    width:100px;
+    height: 100px;
+    margin-left: 30px;
+    margin-top: 0px;
+    position:absolute;
+    padding-right: 20px;
+
+}
+/* titulo e botões */
+.htext, .hlist{
+    position: absolute;
+}
+/* titulo */
+.htext h1 {
+    color: rgb(252, 238, 46);
+    margin-left: 170px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    font-size: 50px;
+
+}
+/* botões do cabeçalho */
+.hlist {
+    position: absolute;
+    right: 10px; 
+    
+}
+/* configuração dos botões */
+.hlist ul li {
+    display:inline-block;
+    height: 0px;
+    border-right-style: solid;
+    border-left-style:solid;
+    border-width: 1px;
+    border-color: rgb(252, 238, 46);
+    list-style-type: none;
+    padding: 50px;
+    margin-top: -16px;
+    margin-left: -5px;
+
+}
+/* estilo dos links dos botões */
+.hlist a {
+    text-decoration: none;
+    color: rgb(252, 238, 46);
+}
+
+/* ---- Centro da página ---- */
+.main {
+    width: 100%;
+    height: 800px;
+    background-color: rgb(61,61,61);
+    margin-top: 70px;
+    border: 3px solid rgb(27, 27, 27)
+
+}
+/* formulário */
+.main_form {
+    color: rgb(252, 238, 46);
+    margin-left: 21%;
+    display: grid;
+    grid-template-columns: 500px 500px;
+    grid-template-rows: auto;
+    column-gap: 100px;
+    row-gap: 10px;
+}
+/* titulo do .main_form */
+.formp {
+    font-size: 50px;
+    color: rgb(252, 238, 46);
+    text-align: center;
+}
+/* botões de seleção de violação */
+.radio {
+    display: grid;
+    grid-template-columns: 30px 300px;
+    grid-template-rows: auto;
+    row-gap: 15px;
+    font-size: 20px;
+    border: 3px solid rgb(252, 238, 46);
+    width: 500px;
+    background-color: rgb(26, 25, 25);
+    color: rgb(252, 238, 46);
+    margin-bottom: 20px;
+    padding-top: 8px;
+    align-items: center;
+    
+}
+/* input de URL */
+.main_form input[type='text'] {
+    background-color: rgb(179, 179, 179);
+    border: 1px solid rgb(61,61,61);
+    border-radius: 3px;
+    width: 450px;
+    height: 30px;
+    font-size: 12px;
+}
+/* Input de descrição */
+.main_form textarea {
+    background-color: rgb(179, 179, 179);
+    border: 1px solid rgb(61,61,61);
+    border-radius: 3px;
+}
+/* botão de enviar */
+.main_form input[type='button'] {
+    background-color: rgb(252, 238, 46);
+    border: 1px solid rgb(252, 238, 46);
+    border-radius: 5px;
+    width: 70px;
+    height: 35px;
+    cursor: pointer;
+}
+
+/* ---- Seção de denúncias da página ---- */
+.main2 {
+    display: grid;
+    grid-template-columns: 900px 900px;
+    width: 100%;
+    height: 800px;
+    background-color: rgb(61,61,61);
+    margin-top: 70px;
+    border: 3px solid rgb(27, 27, 27);
+    overflow: auto;
+    overflow-x: hidden;
+}
+
+.denuncias {
+    width: 900px;
+    height: auto;
+    background-color: rgb(114, 114, 114);
+    border: 5px solid #ffcc00;
+    border-radius: 10px;
+    margin-left: 10px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.denuncias h1, .denuncias h2 {
+    color:#ffcc00;
+    margin-left:10px;
+}
+
+.denuncias h3 {
+    width: fit-content;
+    margin-left:10px;
+    border: 3px solid  rgb(27, 27, 27);
+    border-radius: 10px;
+    padding: 5px;;
+    background-color:  rgb(27, 27, 27);
+}
+
+.denuncias p {
+    width: 800px;
+    height: 120px;
+    padding: 5px;
+    margin-left:10px;
+    border: 3px solid  rgb(27, 27, 27);
+    border-radius: 7px;
+    background-color:  rgb(27, 27, 27);
+    overflow: auto;
+}
+
+.denuncias_img {
+    width: 700px;
+    height: 285px;
+    border: 3px solid #826c2f;
+    margin-left: 5px;
+}
+
+.denuncias img {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    object-fit: cover;
+}
+
+.button_den {
+    color:white;
+    background-color: #ffcc00;
+    border: 1px solid #ffcc00;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 7px;
+    cursor: pointer;
+}
+
+.fdelete {
+    position: absolute;
+    right: 50px;
+    margin: 20px;
+    width: 300px;
+    height: 300px;
+    background-color: rgb(27, 27, 27);
+
+}
+
+/* ---- Seção de nóticias da página ---- */
+.news {
+    /*background-color: rgb(61, 61, 61); */
+    background-color: rgb(32, 32, 32);
+    margin-top: 50px;
+    margin-bottom: 20px;
+    margin-left: -8px;
+    width: 101.1%;
+    height: 600px;
+    border-top: 3px solid rgb(61,61,61);
+    border-bottom: 3px solid rgb(61,61,61);
+    /*border: 3px solid rgb(27,27,27); */
+}
+/* corpo dos blocos */
+.build {
+    display: grid;
+    grid-template-columns: 600px 600px 500px;
+    width: 95%;
+    height: 450px;
+    margin-left: 5%;
+    padding-top: 70px;
+    color:#826c2f
+}
+
+.build p {
+    font-size: 10px;
+}
+
+.build h2 {
+    margin-top: -2px;
+}
+
+.build h2:hover {
+    color:#af9240;
+    cursor: pointer;
+}
+
+.build a {
+    text-decoration: none;
+    color:#826c2f
+}
+
+/* primeiro bloco */
+.block1, .block2, .block3 {
+    background-color: #ffcc00;
+    width: 400px;
+    height: 420px;
+    padding: 15px;
+}
+
+.block1_2, .block2_2, .block3_2 {
+    background-color: #826c2f;
+    width: 400px;
+    height: 280px;
+    border: 20px solid #826c2f;
+    object-fit: cover;
+    
+}
+
+.block1_2 img, .block2_2 img, .block3_2 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+/* ---- Rodape ---- */
+
+.footer {
+    width: 101.1%;
+    height: 300px;
+    background-color: rgb(27,27,27);
+    margin-left: -8px;
+    margin-bottom: -8px;
+}
+
+.ftext {
+    width: 600px;
+    position: relative;
+    text-align: center;
+    font-size: 8px;
+    top: 250px;
+    left: 620px;
+}
+
+.flogo {
+    position:relative;
+    bottom: 20px;
+    width: 100px;
+    height: 100px;
+    margin-left: 46%;
+}
+
+.flogo img {
+    width: 100px;
+    height: 100px;
+}
+
+/* ---- Página de login ---- */
+
+
+/* ---- Página de configurações de conta ---- */
+.dados h1{
+    color:#ffcc00
+}
+
+.dados h3 {
+    width: fit-content;
+    min-width: 800px;
+    margin-left:10px;
+    border: 3px solid  rgb(27, 27, 27);
+    border-radius: 10px;
+    padding: 5px;
+    background-color:  rgb(27, 27, 27);
+}
+
+.dados p {
+    width: fit-content;
+    min-width: 600px;
+    font-size: 15px;
+    margin-left:15px;
+    border: 3px solid  rgb(53, 53, 53);
+    padding: 5px;
+    background-color:  rgb(53, 53, 53);
+}
+
+.alterar {
+    color: white;
+    width: fit-content;
+    border: 3px solid #a78602;
+    border-radius: 5px;
+    background-color: #a78602;
+    padding: 5px;
+    margin-left: 10px;
+}
+
+.conta_ex {
+    color: white;
+    width: fit-content;
+    border: 3px solid rgb(95, 0, 0);
+    border-radius: 5px;
+    background-color: rgb(95, 0, 0);
+    padding: 10px;
+    margin-left: 10px;
+} 
+
+/* ---- Mídia responsiva ---- */
+@media only screen and (max-width: 1600px) {
+	/*formulário*/
+	.build {
+        	grid-template-columns: 500px 500px 310px;
+        	margin-left: 3%;
+    }
+
+	
+}
+
+@media only screen and (max-width: 1440px) {
+    /* formulário */
+    .main_form {
+        margin-left: 11%;
+    }
+
+    /*seção de notícias */
+    .build {
+        grid-template-columns: 460px 460px 310px;
+        margin-left: 3%;
+    }
+    .build h2 {
+        font-size: 16px;
+    }
+
+    .block1, .block2, .block3 {
+        width: 350px;
+        height: 360px;
+    }
+    .block1_2, .block2_2, .block3_2 {
+        width: 350px;
+        height: 240px;
+    }
+
+    .ftext {
+        left: 400px;
+    }
+
+}
+
+@media only screen and (max-width: 1366px) {
+    /* formulário */
+    .main_form {
+        margin-left: 10%;
+    }
+    
+    /* seção de notícias */
+    .build {
+        grid-template-columns: 420px 420px 310px;
+        margin-left: 5%;
+    }
+
+    .build h2 {
+        font-size: 16px;
+    }
+
+    .block1, .block2, .block3 {
+        width: 300px;
+        height: 310px;
+    }
+    .block1_2, .block2_2, .block3_2 {
+        width: 300px;
+        height: 200px;
+    }
+
+    .ftext {
+        left: 370px;
+    }
+
+}
+
+@media only screen and (max-width: 1280px) {
+    /* formulário */
+    /* formulário */
+    .main_form {
+        margin-left: 8%;
+    }
+    
+    /* seção de notícias */
+    .build {
+        grid-template-columns: 420px 420px 310px;
+        margin-left: 3%;
+    }
+
+    .build h2 {
+        font-size: 16px;
+    }
+
+    .block1, .block2, .block3 {
+        width: 300px;
+        height: 310px;
+    }
+    .block1_2, .block2_2, .block3_2 {
+        width: 300px;
+        height: 200px;
+    }
+    
+    .ftext {
+        left: 340px;
+    }
+}
