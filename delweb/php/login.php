@@ -2,6 +2,7 @@
 #José Lucas e Miguel Machado EI-32
 include "DLL.php";
 extract($_POST);  
+session_start();
 
 #Criação do usuário comum
 if(isset($botao1)){ 
@@ -16,11 +17,14 @@ if(isset($botao2)) {
     $result = banco("localhost","root","","delweb",$consulta);
     $exibe = $result->fetch_assoc();
         if($exibe["Tipo"] == "U") {
-            echo "<form action='../contaconfig.php' method='post'> <input type='hidden' name='id' value='".$exibe["id_user"]."'></form>";
-            header("Location: ../main.html");
+            $_SESSION["Nome"] = $exibe["Nome"];
+            $_SESSION["id_user"] = $exibe["id_user"];
+            //unset($_SESSION["Nome"]);
+            header("Location: ../main.php");
             exit();
         }else{
-            echo "<form action='../contaconfig.php' method='post'> <input type='hidden' name='id' value='".$exibe["id_user"]."'></form>";
+            $_SESSION["Nome"] = $exibe["Nome"];
+            $_SESSION["id_user"] = $exibe["id_user"];
             header("Location: ../denuncia.php");
             exit();
         }
