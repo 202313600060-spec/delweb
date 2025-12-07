@@ -50,8 +50,8 @@
     <div class='main'>
         <div class='form'>
             <p class='formp'>Selecione o tipo de violação</p>
-        <!--    <form action="denuncia.php" method="post" enctype="multipart/form-data" class='main_form'> -->
-            <form action="denuncia.php" method="post" class='main_form'>
+            <form action="denuncia.php" method="post" enctype="multipart/form-data" class='main_form'>
+            <!--<form action="denuncia.php" method="post" class='main_form'> -->
                 <div class='radio'>
                     <input type='radio' id='select' value='Violação 1' name='tipo'> <label for='select'> Violação 1 </label>
                     <input type='radio' id='select' value='Violação 2' name='tipo'> <label for='select'> Violação 2 </label>
@@ -68,7 +68,7 @@
                     <input type='text' name='url'><br/>
                     <p> Descrição </p>
                     <textarea rows='20' cols='60' name="descrição"> </textarea><br/>
-                   <!-- <input type="file" name="foto" required> -->
+                    <input type="file" name="foto" required>
                     <input type='submit' name='b1' value='Enviar'>
                 </div>
             </form>
