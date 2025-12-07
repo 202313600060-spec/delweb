@@ -17,7 +17,7 @@ body {
 }
 
 /* Container do login */
-.login {
+.LC{
     padding: 40px;
     background-color: #826c2f;
     border: 25px solid #545454;      /* borda externa */
@@ -50,8 +50,11 @@ body {
 }
 
 /* Inputs com ícones */
-.login input[type="email"],
-.login input[type="password"] {
+.LC input[type="email"],
+.LC input[type="password"],
+.LC input[type="text"],
+.LC input[type="text"],
+.LC input[type="text"] {
     width: 250px;
     padding: 10px 10px 10px 40px; /* espaço pro ícone */
     margin: 10px 0;
@@ -67,28 +70,34 @@ body {
 }
 
 /* Ícones específicos */
-.login input[type="email"] {
-    background-image: url("../img/usuario.png");
+.LC input[type="email"] {
+    background-image: url("email.png");
 }
 
-.login input[type="password"] {
-    background-image: url("../img/senha.png");
+.LC input[type="password"] {
+    background-image: url("senha.png");
 }
 
 /* Placeholder */
-.login input[type="email"]::placeholder,
-.login input[type="password"]::placeholder {
+.LC input[type="email"]::placeholder,
+.LC input[type="password"]::placeholder, 
+.LC input[type="text"]::placeholder,
+.LC input[type="text"]::placeholder,
+.LC input[type="text"]::placeholder {
     color: #826c2f;
 }
 
 /* Foco */
-.login input[type="email"]:focus,
-.login input[type="password"]:focus {
+.LC input[type="email"]:focus,
+.LC input[type="password"]:focus,
+.LC input[type="text"]:focus,
+.LC input[type="text"]:focus,
+.LC input[type="text"]:focus {
     border-color: #d0a933;
 }
 
 /* Botões */
-.login input[type="submit"] {
+.LC input[type="submit"] {
     width: 120px;
     padding: 10px;
     margin: 10px;
@@ -101,6 +110,6 @@ body {
     transition: 0.3s;
 }
 
-.login input[type="submit"]:hover {
+.LC input[type="submit"]:hover {
     background-color: #ffde59;
 }

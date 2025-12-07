@@ -18,11 +18,12 @@ if(isset($b1)) {
     $consulta = "INSERT INTO `denuncia`(Id_den,Tipo,URL,Descrição) VALUES (NULL,'$tipo','$url','$descrição')";
     banco("localhost","root","","delweb",$consulta);
     header("Location: main.php");
-   /* $consulta = "SELECT * FROM denuncia WHERE Tipo = '$tipo'";
+    // envio de imagens
+    $consulta = "SELECT * FROM denuncia ORDER BY `Id_den` DESC LIMIT 1";
     $result = banco("localhost", "root", "", "delweb", $consulta);
     $linha = $result->fetch_assoc();
-    $caminho = "../img/denucia/".$linha["Id_den"].'.jpg';
-    move_uploaded_file($_FILES['foto']['tmp_name'],$caminho);*/
+    $caminho = "img/denuncia/".$linha["Id_den"].'.jpg';
+    move_uploaded_file($_FILES['foto']['tmp_name'],$caminho);
     exit();
 }
 
@@ -60,11 +61,12 @@ $result = banco("localhost","root","","delweb",$consulta);
         <h3>".$exibe["URL"]."</h3>
         <p>".$exibe["Descrição"]."</p>
         <div class='denuncias_img'>
-            <a href='img/news1.png.jpg'><img src='img/news1.png'></a>
+            <a href='img/denuncia/".$exibe["Id_den"].".jpg'><img src='img/denuncia/".$exibe["Id_den"].".jpg'></a>
         </div>
         </div>
         ";
     }
+    //<a href='img/news1.png.jpg'><img src='img/news1.png'></a>
     /*<a href='img/".$exibe["Id_den"].".jpg'><img src='img/".$exibe["Id_den"].".jpg'></a>*/
     /*<input type='submit' name='b3' value='Aprovar' class='button_den'>*/
     /*<input type='submit' name='b2' value='Excluir' class='button_den'>*/
