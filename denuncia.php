@@ -50,8 +50,8 @@ echo "<!DOCTYPE html>
             </ul>
         </div>
     </div>
-    <div class='main2'>
-    <div class='denuncias_l'>";
+    <div class='main2'>";
+    //<div class='denuncias_l'>";
 $consulta = "SELECT * FROM denuncia";
 $result = banco("localhost","root","","delweb",$consulta);
     while($exibe = $result->fetch_assoc()){
@@ -63,27 +63,30 @@ $result = banco("localhost","root","","delweb",$consulta);
         <div class='denuncias_img'>
             <a href='img/denuncia/".$exibe["Id_den"].".jpg'><img src='img/denuncia/".$exibe["Id_den"].".jpg'></a>
         </div>
-        </div>
-        ";
+        <form action='denuncia.php' method='post'>
+            <input type='hidden' name='id' value='".$exibe["Id_den"]."'>
+            <input type='submit' name='b3' value='Aprovar' class='button_den'>
+            <input type='submit' name='b2' value='Excluir' class='button_den'>
+        </form>
+        </div>";
+          
     }
+    
     //<a href='img/news1.png.jpg'><img src='img/news1.png'></a>
     /*<a href='img/".$exibe["Id_den"].".jpg'><img src='img/".$exibe["Id_den"].".jpg'></a>*/
-    /*<input type='submit' name='b3' value='Aprovar' class='button_den'>*/
-    /*<input type='submit' name='b2' value='Excluir' class='button_den'>*/
-
-
             
-echo "</div><form action='denuncia.php' method='post' class='fdelete'>
+/*echo "</div><form action='denuncia.php' method='post' class='fdelete'>
             <p> Escolha o valor da denuncia para selecionar uma exclusão </p>
             <input type='number' name='id'>
             <input type='submit' name='b2' value='Excluir'>
-        </form>";
+        </form>";*/
 
 if(isset($b2)) {
     $consulta = "DELETE FROM `denuncia` WHERE Id_den = '$id'";
     banco("localhost","root","","delweb",$consulta);
     header("Location: denuncia.php");
 }
+
 
 echo "
     </div>

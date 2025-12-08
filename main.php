@@ -68,7 +68,7 @@
                     <input type='text' name='url'><br/>
                     <p> Descrição </p>
                     <textarea rows='20' cols='60' name="descrição"> </textarea><br/>
-                    <input type="file" name="foto" required>
+                    <input type="file" name="foto"> <!--required-->
                     <input type='submit' name='b1' value='Enviar'>
                 </div>
             </form>
