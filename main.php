@@ -31,8 +31,8 @@
                     echo "<li><a href='denuncia.php'>Denúncias</a></li>";
                 }
                 ?>
-                <li><a href='#'>Contato</a></li>
-                <li><a href='#'>Status</a></li>
+                <li><a href='contato.html'>Contato</a></li>
+                <li><a href='aprovado.php'>Aprovações</a></li>
                 <li><a href='contaconfig.php'>Conta</a></li>
                 <?php
                     /*if($_SESSION["Nome"] == NULL) {
