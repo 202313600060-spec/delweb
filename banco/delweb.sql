@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 12/11/2025 às 15:51
--- Versão do servidor: 10.4.32-MariaDB
--- Versão do PHP: 8.0.30
+-- Tempo de geração: 09/12/2025 às 21:01
+-- Versão do servidor: 10.4.28-MariaDB
+-- Versão do PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -31,20 +31,22 @@ CREATE TABLE `denuncia` (
   `Id_den` int(11) NOT NULL,
   `Tipo` text NOT NULL,
   `URL` text NOT NULL,
-  `Descrição` text NOT NULL
+  `Descrição` text NOT NULL,
+  `Stat` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Despejando dados para a tabela `denuncia`
 --
 
-INSERT INTO `denuncia` (`Id_den`, `Tipo`, `URL`, `Descrição`) VALUES
-(28, 'Violação 2', 'a', ' a'),
-(35, 'Violação 5', 'b', ' b'),
-(38, 'Violação 5', 'b', ' b'),
-(39, 'Violação 8', '1234567890.com', ' não gosto de números'),
-(40, 'Violação 4', 'teste', ' teste2'),
-(41, 'Violação 3', 'teste2', ' teste3');
+INSERT INTO `denuncia` (`Id_den`, `Tipo`, `URL`, `Descrição`, `Stat`) VALUES
+(28, 'Violação 2', 'a', ' a', 'F'),
+(35, 'Violação 5', 'b', ' b', 'V'),
+(38, 'Violação 5', 'b', ' b', 'F'),
+(39, 'Violação 8', '1234567890.com', ' não gosto de números', 'F'),
+(40, 'Violação 4', 'teste', ' teste2', 'F'),
+(42, 'Violação 2', 'radar64.com', ' feijão com farinha e banana', 'V'),
+(43, 'Violação 4', 'bmvandwebbbea.COM.br', ' asdasdsadsafeijoada', 'V');
 
 -- --------------------------------------------------------
 
@@ -99,7 +101,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT de tabela `denuncia`
 --
 ALTER TABLE `denuncia`
-  MODIFY `Id_den` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `Id_den` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
 -- AUTO_INCREMENT de tabela `user`

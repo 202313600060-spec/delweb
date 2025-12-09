@@ -135,8 +135,8 @@ body {
 
 /* ---- Seção de denúncias da página ---- */
 .main2 {
-    display: grid;
-    grid-template-columns: 900px 900px;
+    /*display: grid;
+    grid-template-columns: 900px 900px;*/
     width: 100%;
     height: 800px;
     background-color: rgb(61,61,61);

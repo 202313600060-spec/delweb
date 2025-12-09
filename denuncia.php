@@ -15,7 +15,7 @@ if($_SESSION["Tipo"] != "F") {
 
 if(isset($b1)) {
 
-    $consulta = "INSERT INTO `denuncia`(Id_den,Tipo,URL,Descrição) VALUES (NULL,'$tipo','$url','$descrição')";
+    $consulta = "INSERT INTO `denuncia`(Id_den,Tipo,URL,Descrição,Stat) VALUES (NULL,'$tipo','$url','$descrição','F')";
     banco("localhost","root","","delweb",$consulta);
     header("Location: main.php");
     // envio de imagens
@@ -44,8 +44,8 @@ echo "<!DOCTYPE html>
         </div>
         <div class='hlist'>
             <ul>
-                <li><a href='#'>Contato</a></li>
-                <li><a href='#'>Status</a></li>
+                <li><a href='contato.html'>Contato</a></li>
+                <li><a href='aprovado.php'>Aprovações</a></li>
                 <li><a href='contaconfig.php'>Conta</a></li>
             </ul>
         </div>
@@ -55,21 +55,22 @@ echo "<!DOCTYPE html>
 $consulta = "SELECT * FROM denuncia";
 $result = banco("localhost","root","","delweb",$consulta);
     while($exibe = $result->fetch_assoc()){
-        echo "<div class='denuncias'>
-        <h1> Report ".$exibe["Id_den"]."</h1>
-        <h2>".$exibe["Tipo"]."</h2>
-        <h3>".$exibe["URL"]."</h3>
-        <p>".$exibe["Descrição"]."</p>
-        <div class='denuncias_img'>
-            <a href='img/denuncia/".$exibe["Id_den"].".jpg'><img src='img/denuncia/".$exibe["Id_den"].".jpg'></a>
-        </div>
-        <form action='denuncia.php' method='post'>
-            <input type='hidden' name='id' value='".$exibe["Id_den"]."'>
-            <input type='submit' name='b3' value='Aprovar' class='button_den'>
-            <input type='submit' name='b2' value='Excluir' class='button_den'>
-        </form>
-        </div>";
-          
+        if($exibe["Stat"] == "F") {
+            echo "<div class='denuncias'>
+            <h1> Report ".$exibe["Id_den"]."</h1>
+            <h2>".$exibe["Tipo"]."</h2>
+            <h3>".$exibe["URL"]."</h3>
+            <p>".$exibe["Descrição"]."</p>
+            <div class='denuncias_img'>
+                <a href='img/denuncia/".$exibe["Id_den"].".jpg'><img src='img/denuncia/".$exibe["Id_den"].".jpg'></a>
+            </div>
+            <form action='denuncia.php' method='post'>
+                <input type='hidden' name='id' value='".$exibe["Id_den"]."'>
+                <input type='submit' name='b3' value='Aprovar' class='button_den'>
+                <input type='submit' name='b2' value='Excluir' class='button_den'>
+            </form>
+            </div>";
+        }
     }
     
     //<a href='img/news1.png.jpg'><img src='img/news1.png'></a>
@@ -87,6 +88,11 @@ if(isset($b2)) {
     header("Location: denuncia.php");
 }
 
+if(isset($b3)) {
+    $consulta = "UPDATE `denuncia` SET `Stat` = 'V' WHERE Id_den = '$id'";
+    banco("localhost","root","","delweb",$consulta);
+    header("Location: denuncia.php");
+}
 
 echo "
     </div>
@@ -101,28 +107,7 @@ echo "
         <div class='flogo'>
             <img src='img/logo.png'>
         </div>
-    </div>";
-    echo "nome: ".$_SESSION["Nome"]."
-
+    </div>
 </body>
 </html>";
-
-/*
-if(isset($b1)) {
-    if($_FILES['foto']['name'] != NULL){
-
-    $consulta = "INSERT INTO `denuncia`(Id_den,Tipo,URL,Descrição) VALUES (NULL,'$tipo','$url','$descrição')";
-    banco("localhost","root","","delweb",$consulta);
-    
-    /* envio de imagens
-    $result = banco("localhost", "root", "", "delweb", $consulta);
-    $linha = $result->fetch_assoc();
-    $caminho = "../img/denucia/".$linha["Id_den"].'jpg';
-    move_uploaded_file();
-    header("Location: denuncia.php");
-}
-}
-*/
-
-
 ?>
