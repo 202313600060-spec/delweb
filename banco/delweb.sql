@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 09/12/2025 às 21:01
--- Versão do servidor: 10.4.28-MariaDB
--- Versão do PHP: 8.2.4
+-- Tempo de geração: 10/12/2025 às 15:13
+-- Versão do servidor: 10.4.32-MariaDB
+-- Versão do PHP: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -46,7 +46,12 @@ INSERT INTO `denuncia` (`Id_den`, `Tipo`, `URL`, `Descrição`, `Stat`) VALUES
 (39, 'Violação 8', '1234567890.com', ' não gosto de números', 'F'),
 (40, 'Violação 4', 'teste', ' teste2', 'F'),
 (42, 'Violação 2', 'radar64.com', ' feijão com farinha e banana', 'V'),
-(43, 'Violação 4', 'bmvandwebbbea.COM.br', ' asdasdsadsafeijoada', 'V');
+(43, 'Violação 4', 'bmvandwebbbea.COM.br', ' asdasdsadsafeijoada', 'V'),
+(44, 'Violação 4', 'van-preta.com', 'Site de mercado de vendas de orgãos', 'F'),
+(45, 'Violação 7', 'pizzaria-abacaxi.com.br', ' Site que vende pizzas de abacaxi', 'F'),
+(46, 'Violação 8', 'internet-lenta.com', ' Site responsável pela minha internet devagar. O ifba é o seu principal cliente. Deixa minha internet lenta todos os dias', 'F'),
+(47, 'Violação 6', 'aaaaaaaaaaaaaaa', ' ', 'F'),
+(48, 'Violação 3', 'aquario-vivo.com.br', ' Promove a vista de água vivas', 'F');
 
 -- --------------------------------------------------------
 
@@ -101,7 +106,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT de tabela `denuncia`
 --
 ALTER TABLE `denuncia`
-  MODIFY `Id_den` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `Id_den` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 
 --
 -- AUTO_INCREMENT de tabela `user`

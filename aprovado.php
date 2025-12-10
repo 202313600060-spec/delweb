@@ -24,6 +24,7 @@ echo "<!DOCTYPE html>
         </div>
         <div class='hlist'>
             <ul>
+                <li><a href='main.php'>Início</a></li>
                 <li><a href='contato.html'>Contato</a></li>
                 <li><a href='contaconfig.php'>Conta</a></li>
             </ul>
